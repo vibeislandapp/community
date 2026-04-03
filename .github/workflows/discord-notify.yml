@@ -7,26 +7,23 @@ on:
     types: [created]
 
 jobs:
-  notify:
+  notify-bug:
+    if: github.event_name == 'issues' && contains(github.event.issue.labels.*.name, 'bug')
     runs-on: ubuntu-latest
     steps:
-      - name: Notify Discord (Issue)
-        if: github.event_name == 'issues'
+      - name: Post to #bugs
         env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_BUGS }}
         run: |
-          TITLE=$(echo '${{ github.event.issue.title }}' | head -c 200)
-          LABELS='${{ join(github.event.issue.labels.*.name, ', ') }}'
-
           jq -n \
-            --arg title "$TITLE" \
+            --arg title "$(echo '${{ github.event.issue.title }}' | head -c 200)" \
             --arg url "${{ github.event.issue.html_url }}" \
             --arg body "$(echo '${{ github.event.issue.body }}' | head -c 300)" \
-            --arg labels "${LABELS:-none}" \
+            --arg labels '${{ join(github.event.issue.labels.*.name, ', ') }}' \
             --arg author "${{ github.event.issue.user.login }}" \
             --arg author_url "${{ github.event.issue.user.html_url }}" \
             '{embeds: [{
-              title: ("New Issue: " + $title),
+              title: ("\ud83d\udc1b " + $title),
               url: $url,
               description: $body,
               color: 14251863,
@@ -37,21 +34,49 @@ jobs:
               footer: {text: "Vibe Island Community"}
             }]}' | curl -s -H "Content-Type: application/json" -d @- "$DISCORD_WEBHOOK"
 
-      - name: Notify Discord (Discussion)
+  notify-feature:
+    if: >-
+      (github.event_name == 'issues' && contains(github.event.issue.labels.*.name, 'enhancement'))
+      || github.event_name == 'discussion'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post to #feature-requests (Issue)
+        if: github.event_name == 'issues'
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_FEATURES }}
+        run: |
+          jq -n \
+            --arg title "$(echo '${{ github.event.issue.title }}' | head -c 200)" \
+            --arg url "${{ github.event.issue.html_url }}" \
+            --arg body "$(echo '${{ github.event.issue.body }}' | head -c 300)" \
+            --arg labels '${{ join(github.event.issue.labels.*.name, ', ') }}' \
+            --arg author "${{ github.event.issue.user.login }}" \
+            --arg author_url "${{ github.event.issue.user.html_url }}" \
+            '{embeds: [{
+              title: ("\u2728 " + $title),
+              url: $url,
+              description: $body,
+              color: 5025616,
+              fields: [
+                {name: "Labels", value: $labels, inline: true},
+                {name: "Author", value: ("[@" + $author + "](" + $author_url + ")"), inline: true}
+              ],
+              footer: {text: "Vibe Island Community"}
+            }]}' | curl -s -H "Content-Type: application/json" -d @- "$DISCORD_WEBHOOK"
+
+      - name: Post to #feature-requests (Discussion)
         if: github.event_name == 'discussion'
         env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_FEATURES }}
         run: |
-          TITLE=$(echo '${{ github.event.discussion.title }}' | head -c 200)
-
           jq -n \
-            --arg title "$TITLE" \
+            --arg title "$(echo '${{ github.event.discussion.title }}' | head -c 200)" \
             --arg url "${{ github.event.discussion.html_url }}" \
             --arg category "${{ github.event.discussion.category.name }}" \
             --arg author "${{ github.event.discussion.user.login }}" \
             --arg author_url "${{ github.event.discussion.user.html_url }}" \
             '{embeds: [{
-              title: ("New Discussion: " + $title),
+              title: ("\ud83d\udcac " + $title),
               url: $url,
               description: ("Category: " + $category),
               color: 5793266,
