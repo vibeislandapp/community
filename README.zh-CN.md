@@ -1,6 +1,6 @@
 # Vibe Island 社区
 
-[English →](README.md)
+[English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
 
 > [Vibe Island](https://vibeisland.app) 的 Bug 反馈、功能建议与社区讨论。Vibe Island 是一个 macOS 刘海状态面板，支持 Claude Code、Codex、Gemini CLI 等 AI 编程工具。
 

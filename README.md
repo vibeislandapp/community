@@ -1,6 +1,6 @@
 # Vibe Island Community
 
-[中文版 →](README.zh-CN.md)
+[中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
 
 > Bug reports, feature requests, and discussions for [Vibe Island](https://vibeisland.app) — the macOS Notch status panel for Claude Code, Codex, Gemini CLI, and more.
 
