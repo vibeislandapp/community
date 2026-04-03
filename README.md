@@ -1,4 +1,4 @@
-# Vibe Island Community
+# 👾 Vibe Island Community 🏝️
 
 > Bug reports, feature requests, and discussions for [Vibe Island](https://vibeisland.app) — the macOS Notch status panel for Claude Code, Codex, Gemini CLI, and more.
 >
