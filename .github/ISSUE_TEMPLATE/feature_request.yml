@@ -1,0 +1,58 @@
+name: "Feature Request"
+description: "Suggest an improvement or new feature / 功能建议"
+title: "[Feature] "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We'd love to hear your ideas!
+        欢迎提出功能建议！
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem or motivation / 问题或动机"
+      description: "What problem does this solve? / 这个功能解决什么问题？"
+      placeholder: "I often find myself..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: "Proposed solution / 建议方案"
+      description: "How do you envision this working?"
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternatives you've tried / 尝试过的替代方案"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: "Area / 功能领域"
+      options:
+        - Notch Panel / UI
+        - Terminal Jumping
+        - Permission Approval
+        - Sound / Notifications
+        - CLI Integration (new CLI support)
+        - Settings / Configuration
+        - Usage Tracking
+        - Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: search
+    attributes:
+      label: "Checklist"
+      options:
+        - label: "I searched existing issues and this hasn't been requested yet"
+          required: true

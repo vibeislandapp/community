@@ -1,0 +1,62 @@
+name: Discord Notifications
+
+on:
+  issues:
+    types: [opened]
+  discussion:
+    types: [created]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Discord (Issue)
+        if: github.event_name == 'issues'
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          TITLE=$(echo '${{ github.event.issue.title }}' | head -c 200)
+          LABELS='${{ join(github.event.issue.labels.*.name, ', ') }}'
+
+          jq -n \
+            --arg title "$TITLE" \
+            --arg url "${{ github.event.issue.html_url }}" \
+            --arg body "$(echo '${{ github.event.issue.body }}' | head -c 300)" \
+            --arg labels "${LABELS:-none}" \
+            --arg author "${{ github.event.issue.user.login }}" \
+            --arg author_url "${{ github.event.issue.user.html_url }}" \
+            '{embeds: [{
+              title: ("New Issue: " + $title),
+              url: $url,
+              description: $body,
+              color: 14251863,
+              fields: [
+                {name: "Labels", value: $labels, inline: true},
+                {name: "Author", value: ("[@" + $author + "](" + $author_url + ")"), inline: true}
+              ],
+              footer: {text: "Vibe Island Community"}
+            }]}' | curl -s -H "Content-Type: application/json" -d @- "$DISCORD_WEBHOOK"
+
+      - name: Notify Discord (Discussion)
+        if: github.event_name == 'discussion'
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          TITLE=$(echo '${{ github.event.discussion.title }}' | head -c 200)
+
+          jq -n \
+            --arg title "$TITLE" \
+            --arg url "${{ github.event.discussion.html_url }}" \
+            --arg category "${{ github.event.discussion.category.name }}" \
+            --arg author "${{ github.event.discussion.user.login }}" \
+            --arg author_url "${{ github.event.discussion.user.html_url }}" \
+            '{embeds: [{
+              title: ("New Discussion: " + $title),
+              url: $url,
+              description: ("Category: " + $category),
+              color: 5793266,
+              fields: [
+                {name: "Author", value: ("[@" + $author + "](" + $author_url + ")"), inline: true}
+              ],
+              footer: {text: "Vibe Island Community"}
+            }]}' | curl -s -H "Content-Type: application/json" -d @- "$DISCORD_WEBHOOK"
