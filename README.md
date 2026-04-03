@@ -1,43 +1,37 @@
-# 👾 Vibe Island Community 🏝️
+# Vibe Island Community
+
+[中文版 →](README.zh-CN.md)
 
 > Bug reports, feature requests, and discussions for [Vibe Island](https://vibeisland.app) — the macOS Notch status panel for Claude Code, Codex, Gemini CLI, and more.
->
-> [Vibe Island](https://vibeisland.app) 的 Bug 反馈、功能建议与社区讨论。
 
 ---
 
-## Report a Bug / 报告 Bug
+## Report a Bug
 
 [**Open a Bug Report →**](https://github.com/vibeislandapp/community/issues/new?template=bug_report.yml)
 
 Include your Vibe Island version, macOS version, and the CLI tool you were using. Attach diagnostic logs if possible (Settings → About → Export Diagnostics).
 
-请附上版本号、macOS 版本和 CLI 工具。可通过 设置 → 关于 → 导出诊断报告 附加日志。
-
-## Request a Feature / 功能建议
+## Request a Feature
 
 [**Open a Feature Request →**](https://github.com/vibeislandapp/community/issues/new?template=feature_request.yml)
 
 Describe the problem you're solving, not just the solution you want.
 
-请描述你想解决的问题，而不仅仅是想要的功能。
-
-## Ask a Question / 提问
+## Ask a Question
 
 [**Start a Discussion →**](https://github.com/vibeislandapp/community/discussions)
 
 For usage questions, troubleshooting, and general chat. Search existing discussions before posting.
 
-使用问题、故障排除和闲聊请到 Discussions，发帖前请先搜索。
-
 ---
 
-## Community / 社区
+## Community
 
 | Channel | |
 |---------|---|
-| [Discord](https://discord.gg/2GmjPVtc3d) | Real-time chat, quick help / 实时聊天 |
-| [X / Twitter](https://x.com/edwardluox) | Updates, announcements / 更新公告 |
+| [Discord](https://discord.gg/2GmjPVtc3d) | Real-time chat, quick help |
+| [X / Twitter](https://x.com/edwardluox) | Updates, announcements |
 | Email | hi@vibeisland.app |
 
 ---
