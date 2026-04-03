@@ -14,17 +14,24 @@ jobs:
       - name: Post to #bugs (Forum)
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_BUGS }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_LABELS: ${{ join(github.event.issue.labels.*.name, ', ') }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          ISSUE_AUTHOR_URL: ${{ github.event.issue.user.html_url }}
         run: |
-          TITLE=$(echo '${{ github.event.issue.title }}' | head -c 200)
+          TITLE=$(echo "$ISSUE_TITLE" | head -c 200)
+          BODY=$(echo "$ISSUE_BODY" | head -c 300)
 
           jq -n \
             --arg thread_name "$TITLE" \
             --arg title "$TITLE" \
-            --arg url "${{ github.event.issue.html_url }}" \
-            --arg body "$(echo '${{ github.event.issue.body }}' | head -c 300)" \
-            --arg labels '${{ join(github.event.issue.labels.*.name, ', ') }}' \
-            --arg author "${{ github.event.issue.user.login }}" \
-            --arg author_url "${{ github.event.issue.user.html_url }}" \
+            --arg url "$ISSUE_URL" \
+            --arg body "$BODY" \
+            --arg labels "$ISSUE_LABELS" \
+            --arg author "$ISSUE_AUTHOR" \
+            --arg author_url "$ISSUE_AUTHOR_URL" \
             '{
               thread_name: $thread_name,
               embeds: [{
@@ -50,17 +57,24 @@ jobs:
         if: github.event_name == 'issues'
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_FEATURES }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_LABELS: ${{ join(github.event.issue.labels.*.name, ', ') }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          ISSUE_AUTHOR_URL: ${{ github.event.issue.user.html_url }}
         run: |
-          TITLE=$(echo '${{ github.event.issue.title }}' | head -c 200)
+          TITLE=$(echo "$ISSUE_TITLE" | head -c 200)
+          BODY=$(echo "$ISSUE_BODY" | head -c 300)
 
           jq -n \
             --arg thread_name "$TITLE" \
             --arg title "$TITLE" \
-            --arg url "${{ github.event.issue.html_url }}" \
-            --arg body "$(echo '${{ github.event.issue.body }}' | head -c 300)" \
-            --arg labels '${{ join(github.event.issue.labels.*.name, ', ') }}' \
-            --arg author "${{ github.event.issue.user.login }}" \
-            --arg author_url "${{ github.event.issue.user.html_url }}" \
+            --arg url "$ISSUE_URL" \
+            --arg body "$BODY" \
+            --arg labels "$ISSUE_LABELS" \
+            --arg author "$ISSUE_AUTHOR" \
+            --arg author_url "$ISSUE_AUTHOR_URL" \
             '{
               thread_name: $thread_name,
               embeds: [{
@@ -80,16 +94,21 @@ jobs:
         if: github.event_name == 'discussion'
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_FEATURES }}
+          DISC_TITLE: ${{ github.event.discussion.title }}
+          DISC_URL: ${{ github.event.discussion.html_url }}
+          DISC_CATEGORY: ${{ github.event.discussion.category.name }}
+          DISC_AUTHOR: ${{ github.event.discussion.user.login }}
+          DISC_AUTHOR_URL: ${{ github.event.discussion.user.html_url }}
         run: |
-          TITLE=$(echo '${{ github.event.discussion.title }}' | head -c 200)
+          TITLE=$(echo "$DISC_TITLE" | head -c 200)
 
           jq -n \
             --arg thread_name "$TITLE" \
             --arg title "$TITLE" \
-            --arg url "${{ github.event.discussion.html_url }}" \
-            --arg category "${{ github.event.discussion.category.name }}" \
-            --arg author "${{ github.event.discussion.user.login }}" \
-            --arg author_url "${{ github.event.discussion.user.html_url }}" \
+            --arg url "$DISC_URL" \
+            --arg category "$DISC_CATEGORY" \
+            --arg author "$DISC_AUTHOR" \
+            --arg author_url "$DISC_AUTHOR_URL" \
             '{
               thread_name: $thread_name,
               embeds: [{
