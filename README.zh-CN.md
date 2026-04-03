@@ -8,19 +8,19 @@
 
 ## 报告 Bug
 
-[**提交 Bug 报告 →**](https://github.com/vibeislandapp/community/issues/new?template=bug_report.yml)
+[**提交 Bug 报告 →**](https://github.com/vibeislandapp/vibe-island/issues/new?template=bug_report.yml)
 
 请附上 Vibe Island 版本号、macOS 版本和使用的 CLI 工具。可通过 设置 → 关于 → 导出诊断报告 附加日志文件。
 
 ## 功能建议
 
-[**提交功能建议 →**](https://github.com/vibeislandapp/community/issues/new?template=feature_request.yml)
+[**提交功能建议 →**](https://github.com/vibeislandapp/vibe-island/issues/new?template=feature_request.yml)
 
 请描述你想解决的问题，而不仅仅是想要的功能。
 
 ## 提问
 
-[**发起讨论 →**](https://github.com/vibeislandapp/community/discussions)
+[**发起讨论 →**](https://github.com/vibeislandapp/vibe-island/discussions)
 
 使用问题、故障排除和闲聊请到 Discussions，发帖前请先搜索。
 
@@ -50,4 +50,4 @@ iTerm2 · Terminal.app · Ghostty · Warp · VS Code · Cursor · Alacritty · K
 
 - **官网**：[vibeisland.app](https://vibeisland.app)
 - **下载**：[最新版本](https://vibeisland.app/#download)
-- **公告**：[Discussions → Announcements](https://github.com/vibeislandapp/community/discussions/categories/announcements)
+- **公告**：[Discussions → Announcements](https://github.com/vibeislandapp/vibe-island/discussions/categories/announcements)

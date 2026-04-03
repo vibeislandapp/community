@@ -8,19 +8,19 @@
 
 ## Report a Bug
 
-[**Open a Bug Report →**](https://github.com/vibeislandapp/community/issues/new?template=bug_report.yml)
+[**Open a Bug Report →**](https://github.com/vibeislandapp/vibe-island/issues/new?template=bug_report.yml)
 
 Include your Vibe Island version, macOS version, and the CLI tool you were using. Attach diagnostic logs if possible (Settings → About → Export Diagnostics).
 
 ## Request a Feature
 
-[**Open a Feature Request →**](https://github.com/vibeislandapp/community/issues/new?template=feature_request.yml)
+[**Open a Feature Request →**](https://github.com/vibeislandapp/vibe-island/issues/new?template=feature_request.yml)
 
 Describe the problem you're solving, not just the solution you want.
 
 ## Ask a Question
 
-[**Start a Discussion →**](https://github.com/vibeislandapp/community/discussions)
+[**Start a Discussion →**](https://github.com/vibeislandapp/vibe-island/discussions)
 
 For usage questions, troubleshooting, and general chat. Search existing discussions before posting.
 
@@ -50,4 +50,4 @@ iTerm2 · Terminal.app · Ghostty · Warp · VS Code · Cursor · Alacritty · K
 
 - **Website**: [vibeisland.app](https://vibeisland.app)
 - **Download**: [Latest Release](https://vibeisland.app/#download)
-- **Announcements**: [Discussions → Announcements](https://github.com/vibeislandapp/community/discussions/categories/announcements)
+- **Announcements**: [Discussions → Announcements](https://github.com/vibeislandapp/vibe-island/discussions/categories/announcements)

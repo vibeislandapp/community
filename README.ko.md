@@ -8,19 +8,19 @@
 
 ## 버그 신고
 
-[**버그 리포트 작성 →**](https://github.com/vibeislandapp/community/issues/new?template=bug_report.yml)
+[**버그 리포트 작성 →**](https://github.com/vibeislandapp/vibe-island/issues/new?template=bug_report.yml)
 
 Vibe Island 버전, macOS 버전, 사용 중인 CLI 도구를 포함해 주세요. 설정 → 정보 → 진단 보고서 내보내기에서 로그를 첨부할 수 있습니다.
 
 ## 기능 요청
 
-[**기능 요청 작성 →**](https://github.com/vibeislandapp/community/issues/new?template=feature_request.yml)
+[**기능 요청 작성 →**](https://github.com/vibeislandapp/vibe-island/issues/new?template=feature_request.yml)
 
 원하는 기능뿐만 아니라 해결하고 싶은 문제를 설명해 주세요.
 
 ## 질문하기
 
-[**토론 시작 →**](https://github.com/vibeislandapp/community/discussions)
+[**토론 시작 →**](https://github.com/vibeislandapp/vibe-island/discussions)
 
 사용법 질문, 문제 해결, 잡담은 Discussions에서 해주세요. 게시하기 전에 기존 토론을 검색해 주세요.
 
@@ -50,4 +50,4 @@ iTerm2 · Terminal.app · Ghostty · Warp · VS Code · Cursor · Alacritty · K
 
 - **웹사이트**: [vibeisland.app](https://vibeisland.app)
 - **다운로드**: [최신 릴리스](https://vibeisland.app/#download)
-- **공지사항**: [Discussions → Announcements](https://github.com/vibeislandapp/community/discussions/categories/announcements)
+- **공지사항**: [Discussions → Announcements](https://github.com/vibeislandapp/vibe-island/discussions/categories/announcements)

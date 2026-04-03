@@ -8,19 +8,19 @@
 
 ## バグを報告
 
-[**バグレポートを作成 →**](https://github.com/vibeislandapp/community/issues/new?template=bug_report.yml)
+[**バグレポートを作成 →**](https://github.com/vibeislandapp/vibe-island/issues/new?template=bug_report.yml)
 
 Vibe Island のバージョン、macOS バージョン、使用中の CLI ツールを記載してください。設定 → 概要 → 診断レポートの書き出し からログを添付できます。
 
 ## 機能リクエスト
 
-[**機能リクエストを作成 →**](https://github.com/vibeislandapp/community/issues/new?template=feature_request.yml)
+[**機能リクエストを作成 →**](https://github.com/vibeislandapp/vibe-island/issues/new?template=feature_request.yml)
 
 欲しい機能だけでなく、解決したい問題を説明してください。
 
 ## 質問する
 
-[**ディスカッションを開始 →**](https://github.com/vibeislandapp/community/discussions)
+[**ディスカッションを開始 →**](https://github.com/vibeislandapp/vibe-island/discussions)
 
 使い方の質問、トラブルシューティング、雑談は Discussions へ。投稿前に既存のディスカッションを検索してください。
 
@@ -50,4 +50,4 @@ iTerm2 · Terminal.app · Ghostty · Warp · VS Code · Cursor · Alacritty · K
 
 - **ウェブサイト**: [vibeisland.app](https://vibeisland.app)
 - **ダウンロード**: [最新リリース](https://vibeisland.app/#download)
-- **お知らせ**: [Discussions → Announcements](https://github.com/vibeislandapp/community/discussions/categories/announcements)
+- **お知らせ**: [Discussions → Announcements](https://github.com/vibeislandapp/vibe-island/discussions/categories/announcements)
