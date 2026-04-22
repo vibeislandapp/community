@@ -1,5 +1,11 @@
 # Vibe Island Community
 
+[![Website](https://img.shields.io/badge/Website-vibeisland.app-blue?style=flat-square&logo=google-chrome&logoColor=white)](https://vibeisland.app)
+[![Homebrew](https://img.shields.io/badge/Homebrew-Install-orange?style=flat-square&logo=homebrew&logoColor=white)](https://formulae.brew.sh/cask/vibe-island)
+[![Discussions](https://img.shields.io/github/discussions/vibeislandapp/vibe-island?style=flat-square&logo=github)](https://github.com/vibeislandapp/vibe-island/discussions)
+[![Stars](https://img.shields.io/github/stars/vibeislandapp/vibe-island?style=flat-square&logo=github)](https://github.com/vibeislandapp/vibe-island/stargazers)
+[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/2GmjPVtc3d)
+
 [中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
 
 > Bug reports, feature requests, and discussions for [Vibe Island](https://vibeisland.app) — the macOS Notch status panel for Claude Code, Codex, Gemini CLI, and more.
